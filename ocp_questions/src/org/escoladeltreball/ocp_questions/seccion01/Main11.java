@@ -8,12 +8,12 @@ package org.escoladeltreball.ocp_questions.seccion01;
  *
  */
 public class Main11 {
+	private int i;
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
+	private class Main11B {
+		public int getI() {
+			return i;
+		}
 	}
 
 }
