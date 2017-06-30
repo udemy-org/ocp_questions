@@ -9,8 +9,20 @@ package org.escoladeltreball.ocp_questions.seccion01;
  */
 class EquipoDeportivo {
 	private String localidad;
-	private String[] equipo;
+	private String mascota;
 	private int puntos;
+	
+	public boolean equals(Object object) {
+		if (!(object instanceof EquipoDeportivo)) {
+			return false;
+		}
+		EquipoDeportivo temporal = (EquipoDeportivo) object;
+		return localidad.equals(temporal.localidad) && mascota.equals(temporal.mascota);
+	}
+	
+	public int hashCode() {
+		return puntos;
+	}
 }
 public class Main06 {
 
