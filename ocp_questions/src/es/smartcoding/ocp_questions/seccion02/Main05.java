@@ -3,6 +3,8 @@
  */
 package es.smartcoding.ocp_questions.seccion02;
 
+import java.util.List;
+
 /**
  * @author jmendez
  *
@@ -10,11 +12,16 @@ package es.smartcoding.ocp_questions.seccion02;
 
 public class Main05 {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	private static Main05 main;
 
+	private Main05() {
+	}
+
+	public static Main05 getMain() {
+		if (main == null) {
+			main = new Main05();
+		}
+		return main;
 	}
 
 }
