@@ -3,17 +3,29 @@
  */
 package es.smartcoding.ocp_questions.seccion06;
 
+import es.smartcoding.ocp_questions.seccion06.Main17.Cazuela;
+
 /**
  * @author jmendez
  *
  */
 public class Main18 {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	static class Cazuela implements AutoCloseable {
+		public void close() {
+			throw new RuntimeException("A");
+		}
+	}
 
+	public static void main(String[] args) {
+		try (Cazuela cazuela1 = new Cazuela(); Cazuela cazuela2 = new Cazuela();) {
+			throw new RuntimeException("B");
+		} catch (Exception e) {
+			System.out.printf("%s %d%n", e.getMessage(), e.getSuppressed().length);
+			for(Throwable t : e.getSuppressed()) {
+				System.out.println(t);
+			}
+		}
 	}
 
 }

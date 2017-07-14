@@ -9,11 +9,9 @@ package es.smartcoding.ocp_questions.seccion06;
  */
 public class Main11 {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-
+		String s = null;
+		assert s != null;
 	}
 
 }
