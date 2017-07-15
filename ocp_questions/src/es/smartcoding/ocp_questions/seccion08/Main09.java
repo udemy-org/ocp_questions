@@ -3,17 +3,16 @@
  */
 package es.smartcoding.ocp_questions.seccion08;
 
+import java.io.Serializable;
+
 /**
  * @author jmendez
  *
  */
-public class Main09 {
+public class Main09 implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private String nombre = "Pep";
+	private transient String clave = "12345";
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-	}
-
+	// métodos getters y setters
 }
