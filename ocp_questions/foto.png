@@ -1,0 +1,20 @@
+​Considera el siguiente código y determina la salida. Que pasaría si se ejecutara una segunda vez? (Puedes asumir que el fichero origen existe y que es un fichero regular y que el fichero de salida no existe).
+
+
+
+public static void main(String[] args) throws IOException {
+
+Path origen = Paths.get("./file.txt").normalize(); // (1)
+
+Path destino = Paths.get("foto.png");
+
+Files.copy(origen, destino, StandardCopyOption.COPY_ATTRIBUTES); // (2)
+
+System.out.println(Files.isSameFile(origen, destino)); // (3)
+
+}
+
+false
+Si se ejecutara de nuevo el código lanzaría una excepción en tiempo de ejecución de tipo java.nio.file.FileAlreadyExistsException​ debido a la línea (2)​
+
+​	

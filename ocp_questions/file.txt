@@ -1,3 +1,19 @@
-aaaaa adsfasd asdfasdf asdf 
-asdf adsfasdf asdf asd fasd
-asdf asdfasd asdf asdf fasd
+Considera el siguiente código y determina la salida. (Puedes asumir que el directorio '/Users/pep' existe y que tienes permisos de lectura).
+public static void main(String[] args) throws IOException {
+
+Files.walk(Paths.get("/Users/pep/").toRealPath()) // (1) 
+
+.map(p -> p.toAbsolutePath().toString()) // (2)
+
+.filter(s -> s.endsWith(".txt")) // (3)
+
+.collect(Collectors.toList()) // (4)
+.forEach(System.out::println);
+
+}
+
+El código no compila debido a la línea (1)​
+
+El código lanza una excepción en tiempo de ejecución​
+
+El código compila y se ejecuta sin problemas​ y el resultado es un lista de todos los ficheros con extensión '.txt' que cuelgan de '/Users/pep/'
