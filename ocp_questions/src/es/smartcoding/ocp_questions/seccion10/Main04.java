@@ -10,21 +10,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author jmendez
+ * @author pep
  *
  */
-
-public class Main05 {
+public class Main04 {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) throws SQLException {
-		String sql = "update eventos set descripcion='nueva descripción'";
+		String sql = "...";
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ocp", "root", "admin"); // (1)
 		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE); // (2)
+		boolean bool = stmt.execute(sql);
 		int num = stmt.executeUpdate(sql);
-		System.out.println(num);
+		ResultSet rs = stmt.executeQuery(sql);
 	}
 
 }
